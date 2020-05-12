@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/style/mixin.scss';
+@import '@/assets/style/mixin.scss';
 .panel {
   @include panel;
 }

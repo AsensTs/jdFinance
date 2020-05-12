@@ -15,12 +15,13 @@
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+
 export default {
   props: {
     swiperOption: {
       type: Object,
-      default () {
+      default() {
         return {
           autoplay: true,
           loop: true,
@@ -33,7 +34,7 @@ export default {
     },
     swiperSlides: {
       type: Array,
-      default() {
+      default () {
         return []
       }
     }
@@ -46,5 +47,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "~swiper/dist/css/swiper.css";
+@import '~swiper/dist/css/swiper.css';
 </style>
