@@ -1,6 +1,6 @@
 <template>
-  <div :class='[btnClass,cname]'>
-    <slot/>
+  <div :class="[btnClass, cname]">
+    <slot />
   </div>
 </template>
 
@@ -14,15 +14,15 @@ export default {
   },
   data() {
     return {
-      btnClass: 'btn'
-    }
+      btnClass: "btn"
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import '@/assets/style/mixin.scss';
-.btn{
+@import "@/assets/style/mixin.scss";
+.btn {
   @include btn;
 }
 </style>

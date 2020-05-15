@@ -1,12 +1,9 @@
 <template>
   <section :class="cname">
     <swiper :options="swiperOption">
-      <swiper-slide
-        v-for="slide in swiperSlides"
-        :key="slide.href"
-      >
-        <router-link :to="{name: slide.href}">
-          <img :src="slide.src" alt="">
+      <swiper-slide v-for="slide in swiperSlides" :key="slide.id">
+        <router-link :to="{ name: slide.href }">
+          <img :class="slide.imgSizeClass" :src="slide.src" alt="" />
         </router-link>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -15,36 +12,46 @@
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+
 export default {
+  name: "slider",
   props: {
     swiperOption: {
       type: Object,
-      default () {
+      default() {
         return {
           autoplay: true,
           loop: true,
           pagination: {
-            el: '.swiper-pagination'
+            el: ".swiper-pagination"
           },
           notNextTick: false
-        }
+        };
       }
     },
     swiperSlides: {
       type: Array,
       default() {
-        return []
+        return [];
       }
+    },
+    cname: {
+      type: String,
+      default: ""
+    },
+    imgSize: {
+      type: String,
+      default: ""
     }
   },
   components: {
-    swiper,
-    swiperSlide
+    Swiper,
+    SwiperSlide
   }
-}
+};
 </script>
 
-<style lang="scss">
-  @import "~swiper/dist/css/swiper.css";
+<style lang="scss" scoped>
+@import "~swiper/css/swiper.css";
 </style>

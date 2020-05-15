@@ -14,45 +14,35 @@ module.exports = {
     host: 'localhost', // 匹配本机IP地址(默认是0.0.0.0)
     port: 8080, // 开发服务器运行端口号
     https: false,
-    proxy: {
-      '/api': {
-         target: '', // 代理接口地址，设置你调用的接口域名和端口号
-         secure: false, // 如果是https接口，需要配置这个参数
-         changeOrigin: true, // 是否跨域
-         pathRewrite: {
-           '^/api': '' //需要rewrite的, 这里理解成以'/api'开头的接口地址，把/api代替target中的地址
-        }
+    // proxy: {
+    //   '/api': {
+    //      target: '', // 代理接口地址，设置你调用的接口域名和端口号
+    //      secure: false, // 如果是https接口，需要配置这个参数
+    //      changeOrigin: true, // 是否跨域
+    //      pathRewrite: {
+    //        '^/api': '' //需要rewrite的, 这里理解成以'/api'开头的接口地址，把/api代替target中的地址
+    //     }
+    //   }
+    // }
+  },
+  // 向 webpack 的预处理器 loader 传递选项。你可以使用 vue.config.js 中的 css.loaderOptions 选项。
+  // 比如你可以这样向所有 Sass/Less 样式传入共享的全局变量
+  css: {
+    loaderOptions: {
+      sass:{
+        prependData: `@import "~@/assets/style/index.sass"`
+      },
+      scss: {
+        prependData: `@import "~@/assets/style/index.scss";`
       }
     }
   },
-  css: {
-    loaderOptions: {
-    css: {},
-    postcss: {
-        plugins: [
-        require('postcss-px2rem')({
-            remUnit: 37.5
-        })
-        ]
-        }
-    }
-  },
-  chainWebpack: config => {
+  chainWebpack: config => { 
     // 设置路径别名
     config.resolve.alias
       .set("@", resolve("src"))
       .set("@style", resolve("src/assets/style"))
       .set("@images", resolve("src/assets/images"))
       .set("@js", resolve("src/assets/js"));
-  },
-  //插件选项
-  pluginOptions: {
-    "scss-resources-loader": {
-      preProcessor: "scss",
-      // eslint-disable-next-line prettier/prettier
-      patterns: [
-        resolve("/src/assets/style/index.scss")
-      ]
-    }
-  },
+  }
 };

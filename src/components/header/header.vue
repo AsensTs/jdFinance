@@ -13,12 +13,13 @@
 </template>
 
 <script>
-import btn from '../core/btn.vue';
+import btn from "../core/btn.vue";
+
 export default {
-    components:{
-      btn
-    }
-}
+  components: {
+    btn
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +39,6 @@ export default {
 .app-btn {
   width: 32.5%;
   padding: 0;
-  border: 0;
   border-radius: 0;
   line-height: 50px;
 }
@@ -49,9 +49,9 @@ export default {
   line-height: 50px;
 }
 .app-logo {
-  @include img('../../assets/images/jd_logo');
-  background-size: 35px 35px;
-  background-position:center;
+  @include img("../../assets/images/jd_logo");
+  background-size: 35px;
+  background-position: center;
   width: 35px;
   margin-left: 5%;
   margin-right: 2.5%;
@@ -64,7 +64,7 @@ export default {
 }
 .desc-up {
   font-weight: 500;
-  color: #FFF;
+  color: #fff;
   margin-top: 8px;
 }
 .desc-down {
