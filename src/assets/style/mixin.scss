@@ -34,7 +34,7 @@
     overflow: hidden;
 }
 
-@mixin panel($bgcolor:#fff, $padding:0, $magin:0, $height:112px, $txtPadding:0 32px, $color:#333, $fontSize: 14px) {
+@mixin panel($bgcolor:#fff, $padding:0, $magin:0, $height:50px, $txtPadding:0 32px, $color:#333, $fontSize:20px) {
     background: $bgcolor;
     padding: $padding;
     margin: $magin;
@@ -44,7 +44,8 @@
         padding: $txtPadding;
         @include ellipsis();
         color: $color;
-        font-size: $fontSize
+        font-size: $fontSize;
+        font-weight: bold;
     }
 }
 
@@ -58,12 +59,13 @@
     flex-wrap: $wrap;
     justify-content: $justify;
 }
-@mixin listItem($width:80px,$height:68px,$imgSize:45px,$magin:10px,$color:#333,$fontSize:13px) {
+@mixin listItem($width:auto,$height:auto,$imgSize:45px,$magin:10px,$padding:10px,$color:#333,$fontSize:13px) {
     overflow: hidden;
     >li{
         width: $width;
         height: $height;
-        margin:$magin 0;
+        padding: 0 $padding;
+        margin: $magin 0;
         color: $color;
         font-size: $fontSize;
         text-align: center;

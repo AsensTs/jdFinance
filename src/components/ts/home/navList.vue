@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import asList from "../core/list";
+import asList from "@/components/ts/core/list";
 
 export default {
   data() {

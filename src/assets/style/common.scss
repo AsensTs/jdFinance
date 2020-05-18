@@ -1,5 +1,10 @@
+@import "mixin.scss";
 /*普通样式*/
 .swiper-img-size {
   @include imgSize()
+}
+
+.product-list .desc {
+  height: 60px;
 }
 

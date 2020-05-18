@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import asSlider from "../core/slider";
+import asSlider from "../../core/slider";
 
 export default {
   name: "swiper",

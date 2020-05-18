@@ -7,11 +7,11 @@
   </div>
 </template>
 
-<script>
-import asHeader from "@/components/header/header";
-import asSwiper from "@/components/home/swiper";
-import asNavList from "@/components/home/navList";
-import asProductList from "@/components/home/productList";
+<script lang="ts">
+import asHeader from "../../components/ts/header/header.vue";
+import asSwiper from "@/components/ts/home/swiper.vue";
+import asNavList from "@/components/ts/home/navList.vue";
+import asProductList from "@/components/home/productList.vue";
 
 export default {
   components: {

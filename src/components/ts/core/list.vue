@@ -4,11 +4,11 @@
       <li v-for="item in itemList" :key="item.id">
         <router-link :to="{ name: item.href }">
           <div>
-            <img ref="img" v-if="item.src" :src="item.src" />
+            <img ref="imgSize" v-if="item.src" :src="item.src" />
           </div>
           <span class="desc-title">{{ item.title }}</span>
           <span class="desc-instalment"></span>
-          <span class="desc-total"></span>
+          <span class="desc-Total"></span>
           <slot />
         </router-link>
       </li>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { ref, onMounted } from "@vue/composition-api";
+
 export default {
   props: {
     itemList: {
@@ -39,17 +41,17 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      imgSize: this.size
-    };
-  },
-  mounted() {
-    const imgSize = this.$refs.img;
-    imgSize.forEach(item => {
-      item.style.width = this.imgSize.width;
-      item.style.height = this.imgSize.height;
+  setup(props) {
+    const imgSize = ref(null);
+    onMounted(() => {
+      imgSize.value.forEach(item => {
+        item.style.width = props.size.width;
+        item.style.height = props.size.height;
+      });
     });
+    return {
+      imgSize
+    };
   }
 };
 </script>

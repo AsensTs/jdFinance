@@ -1,25 +1,20 @@
 <template>
-  <section :class="[defaultPanel, customize]">
-    <h4>{{ title }}</h4>
+  <div :class="[btnClass, cname]">
     <slot />
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    customize: {
-      type: String,
-      default: ""
-    },
-    title: {
+    cname: {
       type: String,
       default: ""
     }
   },
   data() {
     return {
-      defaultPanel: "panel"
+      btnClass: "btn"
     };
   }
 };
@@ -27,7 +22,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/style/mixin.scss";
-.panel {
-  @include panel;
+.btn {
+  @include btn;
 }
 </style>
