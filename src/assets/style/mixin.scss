@@ -11,7 +11,7 @@
     }
 }
 
-@mixin btn($fontSize:14px,$color:#fff,$bgcolor:#ce2626,$padding:5px,$radius:5px) {
+@mixin btn($fliter:20deg,$fontSize:14px,$color:#fff,$bgcolor:#ce2626,$padding:5px,$radius:5px) {
     padding: $padding;
     background-color: $bgcolor;
     border-radius: $radius;
@@ -21,20 +21,27 @@
     text-align: center;
     line-height:1;
     display: inline-block;
-    filter: hue-rotate(20deg); //滤镜 IE-不兼容
+    filter: hue-rotate($fliter); //滤镜 IE-不兼容
 }
 
 @mixin list($direction: column) {
     @include flex($direction);
 }
 
+// 文字超出显示省略号
 @mixin ellipsis() {
-    text-overflow: ellipsis;
     white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
 }
+@mixin ellipsis_wrap() {
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+}
 
-@mixin panel($bgcolor:#fff, $padding:0, $magin:0, $height:50px, $txtPadding:0 32px, $color:#333, $fontSize:20px) {
+@mixin panel($bgcolor:#fff, $padding:0, $magin:0, $height:50px, $txtPadding:0 10px, $color:#333, $fontSize:20px) {
     background: $bgcolor;
     padding: $padding;
     margin: $magin;
@@ -49,17 +56,19 @@
     }
 }
 
+// 图片尺寸
 @mixin imgSize($width:100%, $height:160px) {
     width: $width;
     height: $height;
 }
 
+// list 布局样式
 @mixin listlayout($display: flex, $wrap: wrap, $justify: space-around) {
     display: $display;
     flex-wrap: $wrap;
     justify-content: $justify;
 }
-@mixin listItem($width:auto,$height:auto,$imgSize:45px,$magin:10px,$padding:10px,$color:#333,$fontSize:13px) {
+@mixin listItem($width:auto,$height:auto,$magin:10px,$padding:10px,$color:#333,$fontSize:13px) {
     overflow: hidden;
     >li{
         width: $width;
@@ -69,8 +78,28 @@
         color: $color;
         font-size: $fontSize;
         text-align: center;
-        >img {
-            @include imgSize($imgSize, $imgSize);
-        }
     }
+    >section {
+        width: $width;
+        height: $height;
+        padding: 0 $padding;
+        margin: $magin 0;
+        color: $color;
+        font-size: $fontSize;
+        text-align: center;
+    }
+}
+
+
+// 按钮标签渐变样式
+@mixin tag($deg:270deg, $color1:#f7e0a6, $color2:#efc388) {
+    background: linear-gradient($deg, $color1, $color2);
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+@mixin price($fontSize: 14px, $fontWeight: bold, $color: #ef4034) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
 }

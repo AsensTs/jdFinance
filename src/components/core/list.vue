@@ -3,13 +3,13 @@
     <ul :class="layout">
       <li v-for="item in itemList" :key="item.id">
         <router-link :to="{ name: item.href }">
+          <div class="tag" v-show="item.tip">{{ item.tip }}</div>
           <div>
-            <img ref="img" v-if="item.src" :src="item.src" />
+            <img ref="img" v-show="item.src" :src="item.src" />
           </div>
           <span class="desc-title">{{ item.title }}</span>
-          <span class="desc-instalment"></span>
-          <span class="desc-total"></span>
-          <slot />
+          <span class="price red" v-show="item.price">{{ item.price }}</span>
+          <span class="desc2" v-show="item.desc2">{{ item.desc2 }}</span>
         </router-link>
       </li>
     </ul>
@@ -59,5 +59,13 @@ export default {
 .flex {
   @include listlayout();
   @include listItem();
+}
+.tag {
+  @include tag();
+}
+.price {
+  color: #ef4034;
+  font-size: 16px;
+  font-weight: bold;
 }
 </style>

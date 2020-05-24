@@ -7,8 +7,8 @@
             <img ref="imgSize" v-if="item.src" :src="item.src" />
           </div>
           <span class="desc-title">{{ item.title }}</span>
-          <span class="desc-instalment"></span>
-          <span class="desc-Total"></span>
+          <span class="desc1"></span>
+          <span class="desc2"></span>
           <slot />
         </router-link>
       </li>
