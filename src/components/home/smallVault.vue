@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import asPanel from ".././core/panel.vue";
-import asList from ".././core/list_r.vue";
+import asPanel from "../core/panel.vue";
+import asList from "../core/list_r.vue";
 export default {
   data() {
     return {

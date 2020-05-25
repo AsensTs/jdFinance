@@ -3,6 +3,7 @@
     <asHeader />
     <asSwiper />
     <asNavList />
+    <asTouchNovice />
     <asProductList />
     <asSmallVault />
   </div>
@@ -14,6 +15,7 @@ import asSwiper from "@/components/home/swiper";
 import asNavList from "@/components/home/navList";
 import asProductList from "@/components/home/productList";
 import asSmallVault from "@/components/home/smallVault";
+import asTouchNovice from "@/components/home/touchNovice";
 
 export default {
   components: {
@@ -21,7 +23,8 @@ export default {
     asSwiper,
     asNavList,
     asProductList,
-    asSmallVault
+    asSmallVault,
+    asTouchNovice
   }
 };
 </script>
