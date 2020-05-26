@@ -1,7 +1,7 @@
 <template>
   <div class="product-list">
     <as-panel :title="title">
-      <as-list :itemList="list" :layout="layout" :size="size"></as-list>
+      <as-list :itemList="list"></as-list>
     </as-panel>
   </div>
 </template>
@@ -75,12 +75,7 @@ export default {
           tip: "24期免息",
           price: "¥ 2860"
         }
-      ],
-      layout: "flex",
-      size: {
-        height: "106px",
-        width: "106px"
-      }
+      ]
     };
   },
   components: {
@@ -90,20 +85,33 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "@/assets/style/mixin.scss";
+
 .product-list {
-  /deep/ li {
-    width: 106px;
-    padding: 0;
+  ul {
+    @include list(row);
   }
-  /deep/ .desc-title {
+  li {
+    width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .desc-title {
     display: block;
     height: 35px;
     overflow: hidden;
     padding: 0 10px;
   }
-  /deep/ .tag {
+  .tag {
     position: absolute;
+    @include tag();
+  }
+  img {
+    width: 200px;
+  }
+  .price {
+    font-size: 32px;
   }
 }
 </style>

@@ -1,14 +1,12 @@
 <template>
-  <section class="section">
-    <router-link :to="{ name: item.href }">
-      <div class="listTag" v-show="item.tip">{{ item.tip }}</div>
-      <div>
-        <img class="listImg" v-show="item.src" :src="item.src" />
-      </div>
-      <span class="desc-title">{{ item.title }}</span>
-      <slot />
-    </router-link>
-  </section>
+  <router-link :to="{ name: item.href }">
+    <div class="listTag" v-show="item.tip">{{ item.tip }}</div>
+    <div>
+      <img :class="imgSize" v-show="item.src" :src="item.src" />
+    </div>
+    <span class="desc-title">{{ item.title }}</span>
+    <slot />
+  </router-link>
 </template>
 
 <script>
@@ -23,6 +21,12 @@ export default {
     layout: {
       type: String,
       default: ""
+    },
+    imgSize: {
+      type: String,
+      default() {
+        return {};
+      }
     }
   }
 };
@@ -32,9 +36,6 @@ export default {
 @import "@/assets/style/mixin.scss";
 .flex {
   @include listlayout();
-}
-.listImg {
-  @include imgSize(106px, 106px);
 }
 .desc-title {
   display: block;

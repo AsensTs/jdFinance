@@ -60,9 +60,6 @@ export default {
   @include listlayout();
   @include listItem();
 }
-.tag {
-  @include tag();
-}
 .price {
   color: #ef4034;
   font-size: 16px;

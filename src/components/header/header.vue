@@ -26,13 +26,13 @@ export default {
 @import "@/assets/style/mixin.scss";
 .header {
   display: flex;
-  height: 50px;
+  height: 100px;
   overflow: hidden;
 }
 .app-open-l {
   width: 67.5%;
   background: #232227;
-  height: 50px;
+  height: 100px;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -40,35 +40,35 @@ export default {
   width: 32.5%;
   padding: 0;
   border-radius: 0;
-  line-height: 50px;
+  line-height: 100px;
 }
 .app-close {
-  width: 16px;
+  width: 32px;
   margin-left: 2.5%;
   color: #fff;
-  line-height: 50px;
+  line-height: 100px;
 }
 .app-logo {
   @include img("../../assets/images/jd_logo");
-  background-size: 35px;
+  background-size: 70px;
   background-position: center;
-  width: 35px;
+  width: 70px;
   margin-left: 5%;
   margin-right: 2.5%;
 }
 .app-desc {
-  height: 50px;
+  height: 100px;
   margin-left: 2.5%;
   text-align: left;
-  font-size: 12px;
+  font-size: 24px;
 }
 .desc-up {
   font-weight: 500;
   color: #fff;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 .desc-down {
   color: #a0a0a0;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 </style>

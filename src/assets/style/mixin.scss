@@ -41,7 +41,7 @@
     overflow:hidden;
 }
 
-@mixin panel($bgcolor:#fff, $padding:0, $magin:0, $height:50px, $txtPadding:0 10px, $color:#333, $fontSize:20px) {
+@mixin panel($bgcolor:#fff, $padding:0, $magin:0, $height:100px, $txtPadding:0 10px, $color:#000, $fontSize:40px) {
     background: $bgcolor;
     padding: $padding;
     margin: $magin;

@@ -1,32 +1,32 @@
 <template>
   <section>
     <as-panel :title="title">
-      <div class="gylCardRowNew-marBot1">
+      <div :class="$style.marBot">
         <img
           src="https://img12.360buyimg.com/n1/s300x300_jfs/t1/80040/40/10768/126848/5d83311eE61e26db4/bc8f655aea591cc1.jpg!q70"
         />
-        <div class="marBot1-desc">
-          <div class="marBot1-desc-top">
-            <span class="tag">3期免息</span>
-            <span class="gylCardRowNew-text">
+        <div :class="$style.desc">
+          <div>
+            <span :class="$style.desctag">3期免息</span>
+            <span :class="$style.desctext">
               魔妮 原木抽纸300张整箱纸巾母婴用纸 实惠家庭装 18包体验装
             </span>
           </div>
-          <div class="marBot1-desc-bottom">
+          <div :class="$style.bottom">
             <span>每月</span>
-            <span class="mix-child-money">¥</span>
-            <span class="mix-child-price">9.96</span>
+            <span :class="$style.mixMoney">¥</span>
+            <span :class="$style.mixPrice">9.96</span>
             <span>总价</span>
-            <span class="mix-child-money">¥</span>
-            <span class="mix-child-price">29.90</span>
+            <span :class="$style.mixMoney">¥</span>
+            <span :class="$style.mixPrice">29.90</span>
           </div>
         </div>
       </div>
-      <div class="gylCardRowNew-marBot2">
-        <ul class="marBot2-ul">
-          <li class="marBot2-li" v-for="item in rowlist2" :key="item.id">
-            <as-list :item="item">
-              <p class="min-child-price">{{ item.price }}</p>
+      <div :class="$style.marList">
+        <ul>
+          <li v-for="item in rowlist2" :key="item.id">
+            <as-list :item="item" :imgSize="$style.imgSize">
+              <p :class="$style.mixPrice">{{ item.price }}</p>
             </as-list>
           </li>
         </ul>
@@ -78,47 +78,51 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @import "@/assets/style/mixin.scss";
 
-.gylCardRowNew-marBot1 {
-  height: 94px;
-  padding: 8px 0 8px 8px;
+.marBot {
+  height: 188px;
+  padding: 16px 0 16px 16px;
   display: flex;
-  font-size: 13px;
+  font-size: 26px;
+  img {
+    width: 188px;
+    height: 188px;
+  }
+  .desc {
+    width: 100%;
+    margin-left: 16px;
+    padding-right: 32px;
+    position: relative;
+    .desctag {
+      @include tag();
+    }
+    .bottom {
+      position: absolute;
+      top: 128px;
+      .mixMoney {
+        @include price();
+      }
+      .mixPrice {
+        @include price(36px);
+      }
+    }
+  }
 }
-.gylCardRowNew-marBot1 img {
-  width: 94px;
-  height: 94px;
+.marList {
+  ul {
+    @include listlayout();
+  }
+  li {
+    width: 212px;
+    text-align: center;
+  }
+  .mixPrice {
+    @include price(26px);
+  }
 }
-.marBot1-desc {
-  width: 100%;
-  margin-left: 8px;
-  padding-right: 16px;
-  position: relative;
-}
-.marBot1-desc .tag {
-  @include tag();
-}
-.marBot1-desc-bottom {
-  position: absolute;
-  top: 64px;
-}
-.mix-child-money,
-.mix-child-price {
-  @include price();
-}
-.mix-child-price {
-  @include price(18px);
-}
-.marBot2-ul {
-  @include listlayout();
-}
-.marBot2-li {
-  width: 106px;
-  text-align: center;
-}
-.min-child-price {
-  @include price(13px);
+.imgSize {
+  @include imgSize(212px, 212px);
 }
 </style>

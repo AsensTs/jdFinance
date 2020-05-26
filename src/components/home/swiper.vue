@@ -1,6 +1,6 @@
 <template>
   <div>
-    <as-slider :swiperSlides="swiperSlides"></as-slider>
+    <as-slider :swiperSlides="swiperSlides" :cname="slider"></as-slider>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   name: "swiper",
   data() {
     return {
+      slider: "slider",
       swiperSlides: [
         {
           id: 1,
@@ -31,4 +32,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.slider {
+  img {
+    width: 100%;
+  }
+}
+</style>

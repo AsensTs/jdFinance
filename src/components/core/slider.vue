@@ -57,7 +57,4 @@ export default {
 <style lang="scss" scoped>
 @import "~swiper/css/swiper.css";
 @import "@/assets/style/mixin.scss";
-img {
-  @include imgSize();
-}
 </style>
