@@ -93,7 +93,7 @@ export default {
     @include list(row);
   }
   li {
-    width: 250px;
+    width: 245px;
     padding: 10px;
     box-sizing: border-box;
   }

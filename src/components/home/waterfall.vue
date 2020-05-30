@@ -267,6 +267,7 @@ export default {
       .navli {
         height: 120px;
         line-height: 120px;
+        font-size: 32px;
       }
     }
   }

@@ -1,14 +1,18 @@
 <template>
-  <header class="header">
+  <header class="header" v-if="closeFlag">
     <div class="app-open-l">
-      <div class="app-close">x</div>
+      <div class="app-close" @click="close">x</div>
       <div class="app-logo"></div>
       <div class="app-desc">
         <p class="desc-up">打开京东金融App</p>
         <p class="desc-down">一站式金融服务平台</p>
       </div>
     </div>
-    <btn class="app-btn">立即打开</btn>
+    <btn class="app-btn">
+      <router-link class="app-link" :to="{ name: 'Download' }">
+        立即打开
+      </router-link>
+    </btn>
   </header>
 </template>
 
@@ -16,6 +20,16 @@
 import btn from "../core/btn.vue";
 
 export default {
+  data() {
+    return {
+      closeFlag: true
+    };
+  },
+  methods: {
+    close() {
+      this.closeFlag = false;
+    }
+  },
   components: {
     btn
   }
@@ -41,6 +55,10 @@ export default {
   padding: 0;
   border-radius: 0;
   line-height: 100px;
+  .app-link {
+    color: #fff;
+    font-size: 14px;
+  }
 }
 .app-close {
   width: 32px;

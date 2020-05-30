@@ -44,6 +44,9 @@ export default {
   }
   .content {
     @include list(row);
+    h4 {
+      font-size: 32px;
+    }
     h4,
     p,
     span {

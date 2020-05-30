@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-import tsHome from "../views/ts/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -12,9 +11,12 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: "/ts",
-    name: "tsHome",
-    component: tsHome
+    path: "/downloadApp",
+    name: "Download",
+    component: () =>
+      import(
+        /* webpackChunkName: "download" */ "@/components/download/Download.vue"
+      )
   }
   // {
   //   path: "/about",
