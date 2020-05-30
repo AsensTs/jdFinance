@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
 
 const resolve = dir => {
@@ -37,6 +38,7 @@ module.exports = {
       },
       postcss: {
         plugins: [
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
           require("postcss-px-to-viewport")({
             unitToConvert: "px",
             viewportWidth: 750,

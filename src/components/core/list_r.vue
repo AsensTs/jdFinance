@@ -25,7 +25,7 @@ export default {
     imgSize: {
       type: String,
       default() {
-        return {};
+        return "";
       }
     }
   }
@@ -39,7 +39,7 @@ export default {
 }
 .desc-title {
   display: block;
-  height: 35px;
+  height: 70px;
   @include ellipsis_wrap();
 }
 </style>

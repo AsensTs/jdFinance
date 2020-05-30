@@ -2,7 +2,7 @@
 @charset "UTF-8";
 
 @mixin flex($direction:column, $inline:block) {
-    display: if($inline == bolck, flex, inline-flex);
+    display: if($inline == bolck, inline-flex, flex);
     flex-direction: $direction;
     flex-wrap: wrap;
 }
