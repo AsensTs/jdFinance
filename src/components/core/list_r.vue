@@ -1,10 +1,9 @@
 <template>
   <router-link :to="{ name: item.href }">
-    <div class="listTag" v-show="item.tip">{{ item.tip }}</div>
     <div>
       <img :class="imgSize" v-show="item.src" :src="item.src" />
     </div>
-    <span class="desc-title">{{ item.title }}</span>
+    <span :class="desctitle">{{ item.title }}</span>
     <slot />
   </router-link>
 </template>
@@ -18,11 +17,13 @@ export default {
         return {};
       }
     },
-    layout: {
-      type: String,
-      default: ""
-    },
     imgSize: {
+      type: String,
+      default() {
+        return "";
+      }
+    },
+    desctitle: {
       type: String,
       default() {
         return "";
@@ -32,14 +33,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/style/mixin.scss";
-.flex {
-  @include listlayout();
-}
-.desc-title {
-  display: block;
-  height: 70px;
-  @include ellipsis_wrap();
-}
-</style>
+<style lang="scss" scoped></style>

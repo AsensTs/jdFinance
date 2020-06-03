@@ -91,11 +91,12 @@ export default {
 .product-list {
   ul {
     @include list(row);
+    justify-content: space-around;
   }
   li {
     width: 245px;
-    padding: 10px;
     box-sizing: border-box;
+    text-align: center;
   }
   .desc-title {
     display: block;

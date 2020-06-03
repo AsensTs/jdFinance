@@ -3,7 +3,7 @@
     <swiper :options="swiperOption">
       <swiper-slide v-for="slide in swiperSlides" :key="slide.id">
         <router-link :to="{ name: slide.href }">
-          <img :src="slide.src" alt="" />
+          <img :class="imgSize" :src="slide.src" alt="" />
         </router-link>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -39,12 +39,15 @@ export default {
     cname: {
       type: String,
       default: ""
+    },
+    imgSize: {
+      type: String,
+      default: ""
     }
   },
   data() {
     return {
-      ref: "sliderimg",
-      imgSize: this.size
+      ref: "sliderimg"
     };
   },
   components: {

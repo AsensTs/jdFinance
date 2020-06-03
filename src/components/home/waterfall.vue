@@ -26,7 +26,11 @@
           :class="[{ [$style.show]: showId === index }, $style.hidden]"
         >
           <li :class="$style.item" v-for="pd in item.product" :key="pd.id">
-            <List :item="pd" :imgSize="$style.imgSize" />
+            <List
+              :item="pd"
+              :desctitle="$style.desctitle"
+              :imgSize="$style.imgSize"
+            />
             <div :class="$style.mx">
               <span :class="$style.mxtag">12期免息</span>
             </div>
@@ -44,6 +48,7 @@
         </ul>
       </div>
     </div>
+    <div class="clear"></div>
   </div>
 </template>
 
@@ -236,8 +241,8 @@ export default {
       this.showId = index;
     },
     touchmoveonhandle(o) {
+      const offsetTop = o[0].offsetTop + 136;
       window.addEventListener("scroll", () => {
-        const offsetTop = o[0].offsetTop;
         const scrollTop =
           document.documentElement.scrollTop ||
           window.pageYOffset ||
@@ -327,5 +332,9 @@ export default {
 }
 .show {
   @include list(row);
+}
+.desctitle {
+  height: 2rem;
+  @include ellipsis_wrap();
 }
 </style>

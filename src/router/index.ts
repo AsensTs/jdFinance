@@ -15,8 +15,14 @@ const routes: Array<RouteConfig> = [
     name: "Download",
     component: () =>
       import(
-        /* webpackChunkName: "download" */ "@/components/download/Download.vue"
+        /* webpackChunkName: "download" */ "@/components/download/download.vue"
       )
+  },
+  {
+    path: "/licai",
+    name: "licai",
+    component: () =>
+      import(/* webpackChunkName: "licai" */ "@/components/licai/licai.vue")
   }
   // {
   //   path: "/about",

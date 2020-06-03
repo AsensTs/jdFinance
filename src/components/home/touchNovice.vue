@@ -54,7 +54,7 @@ export default {
     }
     p {
       color: #999;
-      font-size: 26px;
+      font-size: 24px;
     }
     .item {
       width: 50%;
@@ -67,7 +67,7 @@ export default {
           padding: 16px 0;
         }
         img {
-          width: 42%;
+          width: 46%;
         }
       }
       &:nth-child(2) {

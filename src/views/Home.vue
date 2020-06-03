@@ -7,6 +7,7 @@
     <asProductList />
     <asSmallVault />
     <asWaterfall />
+    <asNav />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import asProductList from "@/components/home/productList";
 import asSmallVault from "@/components/home/smallVault";
 import asTouchNovice from "@/components/home/touchNovice";
 import asWaterfall from "@/components/home/waterfall";
+import asNav from "@/components/nav/nav";
 
 export default {
   components: {
@@ -27,7 +29,8 @@ export default {
     asProductList,
     asSmallVault,
     asTouchNovice,
-    asWaterfall
+    asWaterfall,
+    asNav
   }
 };
 </script>

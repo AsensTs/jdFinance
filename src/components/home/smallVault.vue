@@ -25,7 +25,11 @@
       <div :class="$style.marList">
         <ul>
           <li v-for="item in rowlist2" :key="item.id">
-            <as-list :item="item" :imgSize="$style.imgSize">
+            <as-list
+              :item="item"
+              :imgSize="$style.imgSize"
+              :desctitle="$style.desctitle"
+            >
               <p :class="$style.mixPrice">{{ item.price }}</p>
             </as-list>
           </li>
@@ -42,7 +46,6 @@ export default {
   data() {
     return {
       title: "购物返小金库",
-      rowlist1: [],
       rowlist2: [
         {
           id: 1,
@@ -121,6 +124,10 @@ export default {
   .mixPrice {
     @include price(26px);
   }
+}
+.desctitle {
+  height: 2rem;
+  @include ellipsis_wrap();
 }
 .imgSize {
   @include imgSize(212px, 212px);
